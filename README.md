@@ -46,3 +46,6 @@ The 5-page report, documentation on the data and codes, 15-min presentation. 590
 - Module 3: (weeks 5 and 6) Unsupervised Learning in Geo
 - Module 5: (weeks 7 and 8) Supervised Learning in Geo
 - Module 6: (weeks 9 and 10) Deep Learning in Geo
+
+# Readings and Webinars
+The [Google Document] https://docs.google.com/document/d/15cVLDCpHP74xQqtFq0CrFtrFln1TjdtWq3vg401KJrY/edit#heading=h.zfcrpxuen89 lists references, links, PDFs to the literature assigned and discussed in class. Access limited to participants in the class.
