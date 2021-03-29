@@ -17,11 +17,11 @@ Students will learn by practicing.
 
 **Recommended**: knowledge in Matlab or python, AMATH301, a college-level Earth Sciences course
 
-###Assessment
+### Assessment
 Grading policy:
-Reading and webinar assignments: 20% 
-Homeworks: 50% 
-Final project: 30%
+- Reading and webinar assignments: 20% 
+- Homeworks: 50% 
+- Final project: 30%
  
 **Late work policy**:
 You are allowed once up to 2 late days for homework. Use it wisely and in case of emergency! Email the teaching staff if you anticipate needing an extra day at least 48 hours before the deadline. Otherwise, you will receive a grade of zero.
