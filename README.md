@@ -3,7 +3,9 @@ Spring 2021 Data Science for Earth and Planetary Systems
 
 # Summary
 Introduction to Data Science for Earth and Planetary Systems (surface processes, natural hazards, geochemistry, physics of the Earth interior). Teaches basics in computing skills in python; data manipulations, visualization, curation; data statistics, clustering; regression analysis, neural networks; applied explicitly to data encountered in Earth and Planetary Systems.
-## Learning objectives
+
+### Learning objectives 
+
 Quantitative data analysis is becoming a necessary skill for most geoscientists. The course is designed to provide hands-on experience with fundamental data science techniques applied to geoscientific data. The learning outcomes will be basics in:
 - Computing: python, notebooks, version control, cloud, and local platforms.
 - Data manipulation in Geosciences:  data formats, plotting, dimensionality reduction, and feature engineering.
