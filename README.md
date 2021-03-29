@@ -26,3 +26,23 @@ Grading policy:
 **Late work policy**:
 You are allowed once up to 2 late days for homework. Use it wisely and in case of emergency! Email the teaching staff if you anticipate needing an extra day at least 48 hours before the deadline. Otherwise, you will receive a grade of zero.
 
+**Final project**:
+590: lead a project. 490: assist a 590 project
+
+The final project will be a research-style project that will leverage the materials covered and apply them to new data in geosciences. The students will be evaluated on the following items:
+Formulation of an outstanding research question: an argument for the scientific inquiry based on literature review (PR due )
+1. Design and deploy a scientific workflow: describe in prose or the diagram (e.g., using ASSET) the project.
+2. Design and deploy a data and computing workflow: describe using ASSET
+3. Gather or curate a data set
+4. Develop and deploy an algorithm
+5. Assess the performance of the algorithm
+6. Reproducibility of the results
+The 5-page report, documentation on the data and codes, 15-min presentation. 590 project leaders perform all listed tasks. 490 project assistants help project leaders, in particular in tasks 4, 5, 6, 7. The relation between project leaders and assistants is that expected during undergraduate research internships.  The team will provide a brief progress report PR (½ page PDF to submit on canvas) at the dates listed above, which will help make progress during the quarter.
+ 
+# Syllabus
+
+- Module 1 (weeks 1 and 2): Intro to DS in Earth Systems (basic practice in open science and computing skills)
+- Module 2: (weeks 3 and 4) Data in the Geosciences (basic data handling)
+- Module 3: (weeks 5 and 6) Unsupervised Learning in Geo
+- Module 5: (weeks 7 and 8) Supervised Learning in Geo
+- Module 6: (weeks 9 and 10) Deep Learning in Geo
