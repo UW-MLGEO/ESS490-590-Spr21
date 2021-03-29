@@ -9,6 +9,6 @@ Quantitative data analysis is becoming a necessary skill for most geoscientists.
 - Data manipulation in Geosciences:  data formats, plotting, dimensionality reduction, and feature engineering.
 - Statistical methods applied to geoscience data.
 - Open science, reproducibility, and digital scholarship
-Students will learn by practicing.
-**Prerequisites**: MATH 207 and MATH 208, or MATH 307 and 308, or AMATH 351 and 352, or permission from the instructor.
+Students will learn by practicing.\\
+**Prerequisites**: MATH 207 and MATH 208, or MATH 307 and 308, or AMATH 351 and 352, or permission from the instructor.\\
 **Recommended**: knowledge in Matlab or python, AMATH301, a college-level Earth Sciences course
