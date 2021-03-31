@@ -1,0 +1,532 @@
+% !TEX encoding = UTF-8 Unicode
+\documentclass{beamer}
+
+\usepackage{amsmath}
+\usepackage{color}
+\usepackage{gensymb}
+\usepackage{hyperref}
+\usepackage{textcomp}
+\usepackage{tikz}
+\usepackage{verbatim}
+
+\usetheme{Warsaw}
+
+\definecolor{darkolivegreen}{rgb}{0.33, 0.42, 0.18}
+
+\title[ESS 490-590 - Git tutorial]{Introduction to version control with git}
+\author{Ariane Ducellier}
+\institute{University of Washington}
+\date{ESS 490-590 Data science for Earth and planetary systems - Spring 2021}
+
+\begin{document}
+
+	\begin{frame}
+		\titlepage
+	\end{frame}
+
+	\section*{Anaconda}
+
+	\begin{frame}
+	\frametitle{What do you need to run your Python code?}
+	\begin{itemize}
+	\setlength\itemsep{1em}
+		\item Your code: Some files with .py extension
+		\item Python package: Libraries that contains many functions related to each other (e.g. numpy, scipy, pandas, scikit-learn)
+		\item To run your code, you need to define its environment: Version of Python + Some packages + Version of packages
+	\end{itemize}
+	\end{frame}
+
+	\begin{frame}
+	\frametitle{When do you need to know your environment?}
+	\begin{itemize}
+	\setlength\itemsep{1em}
+		\item You may have on your computer different Python codes with different versions of packages
+		\item You give your code to a friend
+		\item Some of your packages may depend on other packages, with a specific version. How to make sure you have the right version of everything?
+	\end{itemize}
+	\end{frame}
+
+	\begin{frame}
+	\frametitle{How to deal with this?}
+	Install anaconda: \href{https://www.anaconda.com/products/individual}{https://www.anaconda.com/products/individual}
+
+	\begin{itemize}
+	\setlength\itemsep{1em}
+		\item User interface + command line
+		\item Tools for developing code in Python: JupyterLab, Spyder
+		\item  Jupyter notebook (more on this later)
+		\item Tools for managing environment
+	\end{itemize}
+	\end{frame}
+
+	\begin{frame}[fragile]
+	\frametitle{Basic conda commands}
+	Check conda version to make sure it's installed
+	\begin{exampleblock}{}
+		\begin{verbatim}
+		conda info
+		\end{verbatim}
+	\end{exampleblock}
+
+	\vspace{0.5cm}
+
+	List out available environments (the starred * environment is the current activate environment)
+	\begin{exampleblock}{}
+		\begin{verbatim}
+		conda env list 
+		\end{verbatim}
+	\end{exampleblock}
+	\end{frame}
+
+	\begin{frame}[fragile]
+	\frametitle{Basic conda commands (continued)}
+	Create conda environment from environment file
+	\begin{exampleblock}{}
+		\begin{verbatim}
+		conda env create --file environment.yml
+		\end{verbatim}
+	\end{exampleblock}
+
+	\vspace{0.5cm}
+
+	Removing conda environment
+	\begin{exampleblock}{}
+		\begin{verbatim}
+		conda env remove --yes --name myenv
+		\end{verbatim}
+	\end{exampleblock}
+	\end{frame}
+
+	\begin{frame}[fragile]
+	\frametitle{Basic conda commands (continued)}
+	Activate conda environment
+	\begin{exampleblock}{}
+		\begin{verbatim}
+		conda activate myenv
+		\end{verbatim}
+	\end{exampleblock}
+
+	\vspace{0.5cm}
+
+	Deactivate conda environment
+	\begin{exampleblock}{}
+		\begin{verbatim}
+		conda deactivate
+		\end{verbatim}
+	\end{exampleblock}
+	\end{frame}
+
+	\begin{frame}[fragile]
+	\frametitle{Example of .yml file}
+	\begin{exampleblock}{}
+		\begin{verbatim}
+		name: MLlabs
+		channels:
+		  - conda-forge
+		  - defaults
+		dependencies:
+		  - python=3.9
+		  - jupyter
+		  - matplotlib
+		  - numpy
+		  - pandas
+		  - scipy
+		  - scikit-learn
+		  - pytorch
+		\end{verbatim}
+	\end{exampleblock}
+	\end{frame}
+
+	\begin{frame}
+	\frametitle{To learn more about Anaconda environments}
+        	\href{https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html}{https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html}
+	\end{frame}
+
+	\section*{Jupyter notebooks}
+
+    	\begin{frame}
+	\frametitle{How to explain what your code is doing?}
+	A Jupyter notebooks allows you to merge:
+	\begin{itemize}
+	\setlength\itemsep{1em}
+		\item Text
+		\item Images
+		\item Code
+		\item Output of your code
+	\end{itemize}
+	\end{frame}
+
+	\begin{frame}
+	\frametitle{What is a Jupyter notebook made of?}
+	\begin{itemize}
+	\setlength\itemsep{1em}
+		\item Markdown cells for the text
+		\item Code cells for the code
+		\item Kernel:
+		\begin{itemize}
+			\item You can run the code cells one by one
+			\item Run all the cells until the end
+			\item Restart the kernel i.e. delete all the variables that you've created so far
+		\end{itemize}
+	\end{itemize}
+	\end{frame}
+
+	\section*{Markdown}
+
+	\begin{frame}
+	\frametitle{What is Markdown?}
+	Simple language to format text
+
+	Used for:
+	\begin{itemize}
+		\item Text in Jupyter notebooks
+		\item Text on .md files on GitHub (e.g. README.md in a GitHub repository)
+		\item Text on RStudio files
+	\end{itemize}
+	\end{frame}
+
+	\begin{frame}[fragile]
+	\frametitle{Basic Markdown commands}
+	Headings
+	\begin{exampleblock}{}
+		\begin{verbatim}
+		# Heading level 1
+		## Heading level 2
+		### Heading level 3
+		\end{verbatim}
+	\end{exampleblock}
+	\end{frame}
+
+	\begin{frame}[fragile]
+	\frametitle{Basic Markdown commands (continued)}
+	Paragraphs: Leave a blank line
+	\begin{exampleblock}{}
+		\begin{verbatim}
+		This is my first paragraph.
+
+		This is my second paragraph.
+		\end{verbatim}
+	\end{exampleblock}
+
+	\vspace{0.5cm}
+
+	Line break: Leave two or more spaces
+	\begin{exampleblock}{}
+		\begin{verbatim}
+		This is my first line.   
+		This is my second line.
+		\end{verbatim}
+	\end{exampleblock}
+	\end{frame}
+
+	\begin{frame}[fragile]
+	\frametitle{Basic Markdown commands (continued)}
+	Bold text
+	\begin{exampleblock}{}
+		\begin{verbatim}
+		**This is my bold text**
+		\end{verbatim}
+	\end{exampleblock}
+
+	\vspace{0.5cm}
+
+	Italic text
+	\begin{exampleblock}{}
+		\begin{verbatim}
+		*This is my italic text*
+		\end{verbatim}
+	\end{exampleblock}
+
+	\vspace{0.5cm}
+
+	Bold and italic text
+	\begin{exampleblock}{}
+		\begin{verbatim}
+		***This is my bold and italic text***
+		\end{verbatim}
+	\end{exampleblock}
+	\end{frame}
+
+	\begin{frame}[fragile]
+	\frametitle{Basic Markdown commands (continued)}
+	Ordered list
+	\begin{exampleblock}{}
+		\begin{verbatim}
+		1. First item
+		8. Second item
+		3. Third item
+		5. Fourth item
+		\end{verbatim}
+	\end{exampleblock}
+
+	\vspace{0.5cm}
+
+	Bullet points
+	\begin{exampleblock}{}
+		\begin{verbatim}
+		- First item
+		- Second item
+		- Third item
+		- Fourth item
+		\end{verbatim}
+	\end{exampleblock}
+	\end{frame}
+
+	\begin{frame}[fragile]
+	\frametitle{Basic Markdown commands (continued)}
+	Images
+	\begin{exampleblock}{}
+		\begin{verbatim}
+		<img src="images/glass.png" width="200"/>
+		\end{verbatim}
+	\end{exampleblock}
+
+	\vspace{0.5cm}
+
+	Equations (\LaTeX style)
+	\begin{exampleblock}{}
+		\begin{verbatim}
+		$\frac{x}{y} = \sqrt{z}$
+		\end{verbatim}
+	\end{exampleblock}
+	\end{frame}
+
+	\begin{frame}
+	\frametitle{To learn more about Markdown}
+        	\href{https://www.markdownguide.org/}{https://www.markdownguide.org/}
+	\end{frame}
+
+	\section*{Git}
+
+	\begin{frame}
+	\frametitle{First step: Create a GitHub account}
+	Go to \href{https://github.com/}{https://github.com/} and sign up on the top right corner of the webpage.
+	\end{frame}
+
+	\begin{frame}
+	\frametitle{Second step: Install git on your computer}
+	Download git from \href{https://git-scm.com/downloads}{https://git-scm.com/downloads}
+	\end{frame}
+
+	\begin{frame}
+	\frametitle{Why would you want to use git?}
+	\begin{itemize}
+	\setlength\itemsep{1em}
+		\item Version control: Keep track of the changes (get back to the version of your code which was working)
+		\item Let two or more people work on the same file, and keep track of all modifications
+	\end{itemize}
+	\end{frame}
+
+	\begin{frame}
+	\frametitle{What is the difference between git and GitHub?}
+	\begin{itemize}
+	\setlength\itemsep{1em}
+		\item git is a software: You can use it to track changes only on your computer
+		\item GitHub is a platform that can host your repository. There are other platforms like Bitbucket.
+	\end{itemize}
+	\end{frame}
+
+	\begin{frame}[fragile]
+	\frametitle{If you have never used git on your computer}
+	You need to set up your user name and your e-mail
+	\begin{exampleblock}{}
+		\begin{verbatim}
+		> git config --global user.name "ArianeDucellier"
+		> git config --global user.email "ducela@uw.edu"
+			\end{verbatim}
+	\end{exampleblock}
+	Use the same user name as your GitHub account. On GitHub, you will see who has made the modifications to the repository.
+
+	You need to do it only once on your computer.
+	\end{frame}
+
+	\begin{frame}
+	\frametitle{Let us create a new repository on GitHub}
+	\begin{itemize}
+	\setlength\itemsep{1em}
+		\item Connect to your GitHub account
+		\item On the top right of your homepage, click "+" and New repository
+		\item Check "Add a README.md"
+		\item Create repository
+	\end{itemize}
+	\end{frame}
+
+	\begin{frame}
+	\frametitle{Let us do our first commit}
+	\begin{itemize}
+	\setlength\itemsep{1em}
+		\item You can edit the README.md file by going on the pen icon
+		\item Click commit to keep track of the modification
+		\item You can now see that there are now two commits to your repository: Initial commit and Update README.md
+	\end{itemize}
+	\end{frame}
+
+	\begin{frame}[fragile]
+	\frametitle{Let us now work on our computer}
+	The repository now exists on GitHub but not on your computer.
+	\begin{exampleblock}{}
+		\scriptsize{
+		\begin{verbatim}
+		> git clone "https://github.com/ArianeDucellier/example.git"
+		\end{verbatim}
+		}
+	\end{exampleblock}
+
+	\vspace{0.5cm}
+
+	\begin{exampleblock}{}
+		\begin{verbatim}
+		> cd example
+		> ls -al
+		> cat README.md
+		\end{verbatim}
+	\end{exampleblock}
+	\end{frame}
+
+	\begin{frame}[fragile]
+	\frametitle{Let us create a file in our repository}
+	\begin{exampleblock}{}
+		\begin{verbatim}
+		> git status
+		> touch my_file.txt
+		> nano my_file.txt
+		> git status
+		\end{verbatim}
+	\end{exampleblock}
+	\end{frame}
+
+	\begin{frame}[fragile]
+	\frametitle{Let us add the file to the next commit}
+	\begin{exampleblock}{}
+		\begin{verbatim}
+		> git add my_file.txt 
+		> git commit -m "Created file"
+		> git status
+		\end{verbatim}
+	\end{exampleblock}
+	My branch is ahead of 'origin/main' by 1 commit.
+	\end{frame}
+
+	\begin{frame}[fragile]
+	\frametitle{Let us upload the modifications on GitHub}
+	After making a commit
+	\begin{exampleblock}{}
+		\begin{verbatim}
+		> git push
+		\end{verbatim}
+	\end{exampleblock}
+
+	\vspace{0.5cm}
+
+	Always before starting working in your repository
+	\begin{exampleblock}{}
+		\begin{verbatim}
+		> git pull
+		\end{verbatim}
+	\end{exampleblock}
+	\end{frame}
+
+	\begin{frame}[fragile]
+	\frametitle{Let us look at the history of our repository}
+	\begin{itemize}
+	\setlength\itemsep{1em}
+		\item Update my\_file.txt, commit and push
+		\item On GitHub, click on my\_file.txt and look at history
+		\item On your computer, with the command line:
+	\end{itemize}
+	\begin{exampleblock}{}
+		\begin{verbatim}
+		> git log
+		> git log --oneline
+		\end{verbatim}
+	\end{exampleblock}
+	\end{frame}
+
+	\begin{frame}[fragile]
+	\frametitle{Come back to a previous version of our file}
+	Make an additional modification to my\_file.txt
+
+	\vspace{0.5cm}
+
+	\begin{exampleblock}{}
+		\begin{verbatim}
+		> git checkout my_file.txt
+		> cat my_file.txt
+		> git checkout fa708e8 my_file.txt
+		> cat my_file.txt
+		\end{verbatim}
+	\end{exampleblock}
+	\end{frame}
+
+	\begin{frame}[fragile]
+	\frametitle{How to not keep track of some files}
+	\begin{exampleblock}{}
+		\begin{verbatim}
+		> touch data.dat
+		> git status
+		> touch .gitignore
+		> nano .gitignore
+		> git status
+		> git status --ignored
+		> git add -f data.dat
+		\end{verbatim}
+	\end{exampleblock}
+	\end{frame}
+
+	\begin{frame}
+	\frametitle{Work with other people}
+	In your repository on GitHub:
+
+	\vspace{0.5cm}
+
+	\begin{itemize}
+	\setlength\itemsep{1em}
+		\item Go to Settings
+		\item Go to Manage access
+		\item Go to Invite a collaborator
+	\end{itemize}
+	\end{frame}
+
+	\begin{frame}
+	\frametitle{Dealing with conflicts between two versions}
+	Create a conflict:
+	\begin{itemize}
+		\item Modify my\_file.txt on GitHub and commit on GitHub
+		\item Commit the last modifications to my\_file.txt on your computer and push
+	\end{itemize}
+	$\rightarrow$ You get an error message
+	\begin{itemize}
+		\item Pull the last version on GitHub
+		\item Open my\_file.txt and resolve the conflict
+		\item Add my\_file.txt, commit, push
+		\item Check the history of your commits
+	\end{itemize}
+	\end{frame}
+
+	\begin{frame}
+	\frametitle{To learn more about git}
+        	\href{http://swcarpentry.github.io/git-novice/}{http://swcarpentry.github.io/git-novice/}
+	\end{frame}
+
+
+	\begin{frame}
+	\frametitle{Bonus: Binder}
+	
+	\href{https://docs.google.com/presentation/d/1IP_0RclPDHT3ezbdFjxc8D0xwMJIhWNnnNgTWkbKyVI/edit?usp=sharing}{Binder presentation}
+
+	\vspace{0.5cm}
+
+	\href{https://github.com/choldgraf/uw-reproducibility-2019}{Binder workshop}
+
+	\vspace{0.5cm}
+
+	\href{https://the-turing-way.netlify.com/introduction/introduction}{The Turing way}
+
+	\end{frame}
+
+	\begin{frame}
+	\centering
+		\Huge{Happy code sharing!}
+	\end{frame}
+
+\end{document}

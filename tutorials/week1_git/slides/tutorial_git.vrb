@@ -1,0 +1,12 @@
+\frametitle{How to not keep track of some files}
+\begin{exampleblock}{}
+\begin{verbatim}
+> touch data.dat
+> git status
+> touch .gitignore
+> nano .gitignore
+> git status
+> git status --ignored
+> git add -f data.dat
+\end{verbatim}
+\end{exampleblock}
