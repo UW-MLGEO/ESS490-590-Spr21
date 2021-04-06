@@ -1,0 +1,8 @@
+\frametitle{Use nohup to continue your computation after you disconnect}
+\begin{exampleblock}{}
+\begin{verbatim}
+> nohup python find_all_LFEs_parallel.py &
+> ps -x -o pid,user,%mem,command
+> exit
+\end{verbatim}
+\end{exampleblock}
