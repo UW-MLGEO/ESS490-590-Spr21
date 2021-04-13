@@ -1,0 +1,13 @@
+name: obspy
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.7
+  - jupyter
+  - matplotlib
+  - numpy
+  - obspy
+  - pandas
+  - scipy
+

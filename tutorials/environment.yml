@@ -1,0 +1,24 @@
+name: uwdsgeo
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.9
+  - jupyter
+  - folium
+  - geopandas
+  - matplotlib
+  - numpy
+  - pandas
+  - scipy
+  - scikit-learn
+  - shapely
+  - pytorch
+  - ipywidgets
+  - jupyterhub-singleuser
+  - jupyter-server-proxy
+  - jupyterlab=3
+  - jupyter-resource-usage
+  - nbgitpuller
+  - pip=20
+
