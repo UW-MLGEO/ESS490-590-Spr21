@@ -5,15 +5,21 @@ channels:
 dependencies:
   - python=3.9
   - jupyter
+  - earthpy
   - folium
   - geopandas
   - matplotlib
+  - mongodb
+  - netCDF4
   - numpy
   - pandas
+  - pycrs
+  - pytorch
+  - rasterio
   - scipy
   - scikit-learn
   - shapely
-  - pytorch
+  - xarray
   - ipywidgets
   - jupyterhub-singleuser
   - jupyter-server-proxy
