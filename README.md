@@ -1,6 +1,8 @@
 # ESS490-590-Spr21
 Spring 2021 Data Science for Earth and Planetary Systems
 
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/UW-ESS-DS/ESS490-590-Spr21/HEAD)
+
 # Overview
 Introduction to Data Science for Earth and Planetary Systems (surface processes, natural hazards, geochemistry, physics of the Earth interior). Teaches basics in computing skills in python; data manipulations, visualization, curation; data statistics, clustering; regression analysis, neural networks; applied explicitly to data encountered in Earth and Planetary Systems.
 
